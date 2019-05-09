@@ -1,0 +1,163 @@
+<header class="head">
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand logo" href="#">
+			<img src="assets/images/lvk-logo.png" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<form class="navbar-form navbar-right hidden-sm">
+					<div class="form-group search-wrapper">
+						<i class="fa fa-search"></i>
+						<input type="text" class="form-control search-box" placeholder="Search friends, photos, videos">
+					</div>
+				</form>
+			</ul>
+		</div>
+		<ul class="header-icon">
+			<li>
+				<i class="fa fa-bell" aria-hidden="true"></i>
+			</li>
+			<li>
+				<i class='far fa-comment-alt'></i>
+			</li>
+			<li>
+				<i class='fa fa-user'></i>
+			</li>
+		</ul>
+	</nav>
+</header>
+<div class="body-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="widget">
+					<ul class="naves">
+						<li>
+							<i class="fa fa-clipboard"></i>
+							<a href="#" title="">News Feed</a>
+						</li>
+						<li>
+							<i class="fa fa-user-circle"></i>
+							<a href="#" title="">Profile</a>
+						</li>
+						<li>
+							<i class="fa fa-calendar"></i>
+							<a href="#" title="">Events</a>
+						</li>
+						<li>
+							<i class="fa fa-hotel"></i>
+							<a href="#" title="">Room Spaces</a>
+						</li>
+						<li>
+							<i class="fa fa-inbox"></i>
+							<a href="#" title="">Inbox</a>
+						</li>
+						<li>
+							<i class="fa fa-envelope"></i>
+							<a href="#" title="">Messages</a>
+						</li>
+						<li>
+							<i class="fa fa-bell"></i>
+							<a href="#" title="">Notifications</a>
+						</li>
+						<li>
+							<i class="fa fa-power-off"></i>
+							<a href="#" title="">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="central-meta">
+					<div class="frnds">
+						<ul class="nav nav-pills">
+							<li class="nav-item">
+								<a class="nav-link active frnd-btn" data-toggle="pill" href="#myfriend">My Friends</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link frnd-btn"  data-toggle="pill" href="#friendRequest">Friend Request</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link frnd-btn"  data-toggle="pill" href="#searchfriends">Search Friend</a>
+							</li>
+						</ul>
+						
+						<!-- Tab panes -->
+						<div class="tab-content"  >
+							<div class="tab-pane container active" id="myfriend" >
+								<ul class="nearby-contct" >
+									<li  *ngFor="let friend of friends">
+										<div class="nearly-pepls">
+											<figure>
+												<a href="#" title=""><img src={{friend.dp}} alt=""></a>
+											</figure>
+											<div class="pepl-info">
+												<h4><a href="#" title="">{{friend.name}}</a></h4>
+												
+												<a href="#" title="" class="add-butn more-action" data-ripple="">unfriend</a>
+												<a href="#" title="" class="add-butn" data-ripple="">add friend</a>
+											</div>
+										</div>
+									</li>
+									<!-- <li>
+										<div class="nearly-pepls">
+											<figure>
+												<a href="#" title=""><img src="assets/images/friend-avatar9.jpg" alt=""></a>
+											</figure>
+											<div class="pepl-info">
+												<h4><a href="#" title="">sophia Gate</a></h4>
+												<span>tv actresses</span>
+												<a href="#" title="" class="add-butn more-action" data-ripple="">unfriend</a>
+												<a href="#" title="" class="add-butn" data-ripple="">add friend</a>
+											</div>
+										</div>
+									</li> -->
+								</ul>
+							</div>
+							<div class="tab-pane container fade" id="friendRequest">
+								<ul class="nearby-contct" *ngFor="let request of requests">
+									<li >
+										<div class="nearly-pepls">
+											<figure>
+												<a href="#" title=""><img src={{request.dp}} alt=""></a>
+											</figure>
+											<div class="pepl-info">
+												<h4><a href="#" title="">{{request.name}}</a></h4>
+												
+												<a href="#" title="" class="add-butn more-action" data-ripple="">unfriend</a>
+												<a href="#" title="" class="add-butn" data-ripple="">add friend</a>
+											</div>
+										</div>
+									</li>
+									<!-- <li>
+										<div class="nearly-pepls">
+											<figure>
+												<a href="#" title=""><img src="assets/images/friend-avatar9.jpg" alt=""></a>
+											</figure>
+											<div class="pepl-info">
+												<h4><a href="#" title="">aa</a></h4>
+												<span>tv actresses</span>
+												<a href="#" title="" class="add-butn more-action" data-ripple="">Not now</a>
+												<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+											</div>
+										</div>
+									</li> -->
+									
+								</ul>
+							</div>
+							<div class="tab-pane container fade" id="searchfriends">
+								<div ng-app="myApp" ng-controller="namesCtrl">
+									<input type="text" ng-model="test" class="frnd-search" placeholder="Search Friend">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
